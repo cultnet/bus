@@ -1,0 +1,19 @@
+{
+  "name": "@cultnet/bus",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cultnet/bus.git"
+  },
+  "scripts": {
+    "build": "lsc -c index bus service"
+  },
+  "dependencies": {
+    "redis": "^2.8.0",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "livescript": "^1.6.0"
+  }
+}
