@@ -1,6 +1,6 @@
 { create-client } = require \redis
 
-BOTNET = process.env.BOTNET or \eggr
+BOTNET = process.env.BOTNET or \cultnet
 
 export Bus = { send, receive }
 
@@ -14,4 +14,4 @@ function receive type, signal, protocol, subscriber
   sub.on \message (channel, payload) ->
     msg = JSON.parse payload
     try subscriber msg
-  sub.subscribe "#{BOTNET}.#{type}.#{signal}.#{protocol}"
+  sub.psubscribe "#{BOTNET}.#{type}.#{signal}.#{protocol}"
