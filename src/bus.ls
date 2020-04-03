@@ -11,7 +11,9 @@ function send type, signal, protocol, payload
 
 function receive type, signal, protocol, subscriber
   sub = create-client 6379
-  sub.on \message (channel, payload) ->
+  sub.on \pmessage (pattern, channel, payload) ->
     msg = JSON.parse payload
+    [, msg.type, msg.signal, msg.protocol] = channel.split "."
     try subscriber msg
+    catch e => console.log e
   sub.psubscribe "#{BOTNET}.#{type}.#{signal}.#{protocol}"
