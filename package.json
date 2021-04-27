@@ -10,7 +10,7 @@
     "build": "lsc -o dist -c src/index src/bus src/service"
   },
   "dependencies": {
-    "redis": "^2.8.0",
+    "redis": "^3.1.1",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
